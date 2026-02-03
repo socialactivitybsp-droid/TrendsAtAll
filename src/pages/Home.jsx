@@ -27,7 +27,7 @@ function Home() {
       setErrorMessage('');
 
       try {
-        const [etsy, flipkart, rising, categories, spotify, apple, youtube] = await Promise.all([
+        const results = await Promise.allSettled([
           fetchEtsyTrends(),
           fetchFlipkartTrends(),
           fetchGoogleRisingSearches(),
@@ -37,13 +37,26 @@ function Home() {
           fetchYoutubeMusicTrends(),
         ]);
 
+        const [etsy, flipkart, rising, categories, spotify, apple, youtube] = results.map((result) =>
+          result.status === 'fulfilled'
+            ? result.value
+            : { title: 'Unavailable', subtitle: 'Data unavailable', items: [] }
+        );
+
         setTrendData({
           products: [etsy, flipkart],
           searches: [rising, categories],
           music: [spotify, apple, youtube],
         });
+
+        const hasMissingData = [etsy, flipkart, rising, categories, spotify, apple, youtube].some(
+          (section) => !section.items || section.items.length === 0
+        );
+        if (hasMissingData) {
+          setErrorMessage('Some data sources are currently unavailable. We will retry automatically.');
+        }
       } catch (error) {
-        setErrorMessage('We had trouble loading the latest trends. Showing cached highlights instead.');
+        setErrorMessage('We had trouble loading the latest trends. Please try again soon.');
         setTrendData(initialState);
       } finally {
         setLoading(false);

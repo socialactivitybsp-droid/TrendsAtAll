@@ -18,9 +18,13 @@ function CategorySection({ title, description, sections }) {
               <span className="category__panel-meta">{section.subtitle}</span>
             </div>
             <div className="category__cards">
-              {section.items.map((item) => (
-                <TrendCard key={`${section.title}-${item.rank}-${item.title}`} item={item} />
-              ))}
+              {section.items.length > 0 ? (
+                section.items.map((item) => (
+                  <TrendCard key={`${section.title}-${item.rank}-${item.title}`} item={item} />
+                ))
+              ) : (
+                <div className="category__empty">No live data returned yet.</div>
+              )}
             </div>
           </div>
         ))}
