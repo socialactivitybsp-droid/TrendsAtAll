@@ -1,0 +1,90 @@
+const fallbackFlipkart = [
+  {
+    title: 'Noise ColorFit Smartwatch',
+    subtitle: '₹1,999 · Wearables',
+    image: 'https://images.unsplash.com/photo-1511732351661-529c15f16f48?auto=format&fit=crop&w=200&q=80',
+    rank: 1,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+  {
+    title: 'boAt BassHeads 242 Earphones',
+    subtitle: '₹499 · Audio',
+    image: 'https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=200&q=80',
+    rank: 2,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+  {
+    title: 'Mi Power Bank 10000mAh',
+    subtitle: '₹1,299 · Accessories',
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=200&q=80',
+    rank: 3,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+  {
+    title: 'Prestige Electric Kettle',
+    subtitle: '₹899 · Kitchen',
+    image: 'https://images.unsplash.com/photo-1527515637462-daf0b3f5ac31?auto=format&fit=crop&w=200&q=80',
+    rank: 4,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+  {
+    title: 'Philips Air Purifier',
+    subtitle: '₹6,999 · Home essentials',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=200&q=80',
+    rank: 5,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+  {
+    title: 'Wildcraft Cabin Backpack',
+    subtitle: '₹2,499 · Travel gear',
+    image: 'https://images.unsplash.com/photo-1514474959185-1472d4f7448f?auto=format&fit=crop&w=200&q=80',
+    rank: 6,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+  {
+    title: 'Samsung Galaxy M Series',
+    subtitle: '₹14,999 · Smartphones',
+    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=80',
+    rank: 7,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+  {
+    title: 'Havells 3-Burner Cooktop',
+    subtitle: '₹4,299 · Kitchen',
+    image: 'https://images.unsplash.com/photo-1502740479091-635887520276?auto=format&fit=crop&w=200&q=80',
+    rank: 8,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+  {
+    title: 'Lenovo IdeaPad Slim 3',
+    subtitle: '₹42,990 · Laptops',
+    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=200&q=80',
+    rank: 9,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+  {
+    title: 'Philips Trimmer BT3102',
+    subtitle: '₹999 · Grooming',
+    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=200&q=80',
+    rank: 10,
+    platform: 'Flipkart',
+    url: 'https://www.flipkart.com',
+  },
+];
+
+export const fetchFlipkartTrends = async () => {
+  return {
+    title: 'Flipkart Best Sellers',
+    subtitle: 'Mocked best sellers (India)',
+    items: fallbackFlipkart,
+  };
+};

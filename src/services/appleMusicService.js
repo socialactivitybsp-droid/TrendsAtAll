@@ -1,0 +1,90 @@
+const appleFallback = [
+  {
+    title: 'Sunset Run',
+    subtitle: 'Diljit Dosanjh · Rank 1',
+    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=200&q=80',
+    rank: 1,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Monsoon Parade',
+    subtitle: 'Neha Kakkar · Rank 2',
+    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=200&q=80',
+    rank: 2,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Citywide Dreams',
+    subtitle: 'AP Dhillon · Rank 3',
+    image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=200&q=80',
+    rank: 3,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Morning Tide',
+    subtitle: 'Jasleen Royal · Rank 4',
+    image: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=200&q=80',
+    rank: 4,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Retro Love Story',
+    subtitle: 'Shankar Mahadevan · Rank 5',
+    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=200&q=80',
+    rank: 5,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Digital Heartbeats',
+    subtitle: 'Raftaar · Rank 6',
+    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=200&q=80',
+    rank: 6,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Golden Hour Drive',
+    subtitle: 'B Praak · Rank 7',
+    image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=200&q=80',
+    rank: 7,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Moonlit Balcony',
+    subtitle: 'Sunidhi Chauhan · Rank 8',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=200&q=80',
+    rank: 8,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Electric Rains',
+    subtitle: 'Harrdy Sandhu · Rank 9',
+    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=200&q=80',
+    rank: 9,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Ocean Avenue',
+    subtitle: 'Palak Muchhal · Rank 10',
+    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=200&q=80',
+    rank: 10,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+];
+
+export const fetchAppleMusicCharts = async () => {
+  return {
+    title: 'Apple Music Charts',
+    subtitle: 'Chart-toppers (mock)',
+    items: appleFallback,
+  };
+};

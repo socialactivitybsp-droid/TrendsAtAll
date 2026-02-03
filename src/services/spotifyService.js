@@ -1,0 +1,90 @@
+const spotifyFallback = [
+  {
+    title: 'Magnetic Nights',
+    subtitle: 'Arijit Singh · Rank 1',
+    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=200&q=80',
+    rank: 1,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+  {
+    title: 'Echoes of Tomorrow',
+    subtitle: 'Anuv Jain · Rank 2',
+    image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=200&q=80',
+    rank: 2,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+  {
+    title: 'Midnight Atlas',
+    subtitle: 'DIVINE · Rank 3',
+    image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=200&q=80',
+    rank: 3,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+  {
+    title: 'Blooming Beats',
+    subtitle: 'Shreya Ghoshal · Rank 4',
+    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=200&q=80',
+    rank: 4,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+  {
+    title: 'City Lights',
+    subtitle: 'Prateek Kuhad · Rank 5',
+    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=200&q=80',
+    rank: 5,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+  {
+    title: 'Gravity Groove',
+    subtitle: 'Ritviz · Rank 6',
+    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=200&q=80',
+    rank: 6,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+  {
+    title: 'Runaway Skies',
+    subtitle: 'Jonita Gandhi · Rank 7',
+    image: 'https://images.unsplash.com/photo-1454922915609-78549ad709bb?auto=format&fit=crop&w=200&q=80',
+    rank: 7,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+  {
+    title: 'Vivid Motion',
+    subtitle: 'Badshah · Rank 8',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=200&q=80',
+    rank: 8,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+  {
+    title: 'Silent Horizon',
+    subtitle: 'King · Rank 9',
+    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=200&q=80',
+    rank: 9,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+  {
+    title: 'Velvet Drive',
+    subtitle: 'A.R. Rahman · Rank 10',
+    image: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=200&q=80',
+    rank: 10,
+    platform: 'Spotify',
+    url: 'https://open.spotify.com',
+  },
+];
+
+export const fetchSpotifyTopCharts = async () => {
+  return {
+    title: 'Spotify Top Charts',
+    subtitle: 'Streaming momentum (mock)',
+    items: spotifyFallback,
+  };
+};
