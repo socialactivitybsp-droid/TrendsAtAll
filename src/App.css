@@ -1,0 +1,10 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(246, 247, 251, 0.98), rgba(246, 247, 251, 0.9));
+}
+
+@media (prefers-color-scheme: dark) {
+  .app {
+    background: linear-gradient(180deg, rgba(11, 13, 18, 0.98), rgba(11, 13, 18, 0.92));
+  }
+}

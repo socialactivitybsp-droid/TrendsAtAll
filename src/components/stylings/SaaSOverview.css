@@ -1,0 +1,149 @@
+.saas {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 28px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.saas__header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.saas__header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: #0f172a;
+}
+
+.saas__header p {
+  color: #475467;
+  max-width: 640px;
+}
+
+.saas__eyebrow {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: #667085;
+}
+
+.saas__cta {
+  align-self: flex-start;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #0ea5e9;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saas__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.saas__card {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.saas__card h3 {
+  color: #111827;
+  font-size: 1rem;
+}
+
+.saas__card p {
+  color: #475467;
+  font-size: 0.9rem;
+}
+
+.saas__tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.saas__tier {
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.saas__price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.saas__description {
+  color: #475467;
+  font-size: 0.9rem;
+}
+
+.saas__tier ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #344054;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 960px) {
+  .saas__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .saas__cta {
+    align-self: center;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .saas {
+    background: #111827;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .saas__header h2 {
+    color: #f8fafc;
+  }
+
+  .saas__header p,
+  .saas__eyebrow {
+    color: #94a3b8;
+  }
+
+  .saas__card,
+  .saas__tier {
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(148, 163, 184, 0.2);
+  }
+
+  .saas__card h3,
+  .saas__price {
+    color: #f8fafc;
+  }
+
+  .saas__card p,
+  .saas__description,
+  .saas__tier ul {
+    color: #cbd5f5;
+  }
+}
