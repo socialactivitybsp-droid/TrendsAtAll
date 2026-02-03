@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import CategorySection from '../components/CategorySection';
 import Loader from '../components/Loader';
 import ErrorState from '../components/ErrorState';
+import SaaSOverview from '../components/SaaSOverview';
 import { fetchEtsyTrends } from '../services/etsyService';
 import { fetchFlipkartTrends } from '../services/flipkartService';
 import { fetchGoogleRisingSearches, fetchGoogleCategoryTrends } from '../services/googleTrendsService';
@@ -102,6 +103,7 @@ function Home() {
             description="Charts and viral hits across streaming platforms."
             sections={trendData.music}
           />
+          <SaaSOverview />
         </section>
       )}
     </main>
