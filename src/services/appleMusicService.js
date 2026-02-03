@@ -1,52 +1,103 @@
-const normalizeSong = (song, index) => ({
-  title: song.name,
-  subtitle: `${song.artistName} · Rank ${index + 1}`,
-  image: song.artworkUrl100 || song.artworkUrl60 || '',
-  rank: index + 1,
-  platform: 'Apple Music',
-  url: song.url || 'https://music.apple.com',
-});
-
-const fetchPrimaryChart = async () => {
-  const response = await fetch('https://rss.applemarketingtools.com/api/v2/in/music/most-played/10/songs.json');
-  if (!response.ok) {
-    throw new Error('Failed to load Apple Music chart');
-  }
-  return response.json();
-};
-
-const fetchSecondaryChart = async () => {
-  const response = await fetch('https://itunes.apple.com/in/rss/topsongs/limit=10/json');
-  if (!response.ok) {
-    throw new Error('Failed to load Apple Music chart');
-  }
-  return response.json();
-};
+const appleFallback = [
+  {
+    title: 'Sunset Run',
+    subtitle: 'Diljit Dosanjh · Rank 1',
+    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=200&q=80',
+    rank: 1,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Monsoon Parade',
+    subtitle: 'Neha Kakkar · Rank 2',
+    image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=200&q=80',
+    rank: 2,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Citywide Dreams',
+    subtitle: 'AP Dhillon · Rank 3',
+    image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=200&q=80',
+    rank: 3,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Morning Tide',
+    subtitle: 'Jasleen Royal · Rank 4',
+    image: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=200&q=80',
+    rank: 4,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Retro Love Story',
+    subtitle: 'Shankar Mahadevan · Rank 5',
+    image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=200&q=80',
+    rank: 5,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Digital Heartbeats',
+    subtitle: 'Raftaar · Rank 6',
+    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=200&q=80',
+    rank: 6,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Golden Hour Drive',
+    subtitle: 'B Praak · Rank 7',
+    image: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=200&q=80',
+    rank: 7,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Moonlit Balcony',
+    subtitle: 'Sunidhi Chauhan · Rank 8',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=200&q=80',
+    rank: 8,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Electric Rains',
+    subtitle: 'Harrdy Sandhu · Rank 9',
+    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=200&q=80',
+    rank: 9,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+  {
+    title: 'Ocean Avenue',
+    subtitle: 'Palak Muchhal · Rank 10',
+    image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=200&q=80',
+    rank: 10,
+    platform: 'Apple Music',
+    url: 'https://music.apple.com',
+  },
+];
 
 export const fetchAppleMusicCharts = async () => {
   try {
-    const data = await fetchPrimaryChart();
-    const items = (data.feed?.results || []).map(normalizeSong);
+    const response = await fetch('http://localhost:5000/api/apple-music');
+    if (!response.ok) {
+      throw new Error('Failed to load Apple Music chart');
+    }
+    const data = await response.json();
     return {
       title: 'Apple Music Charts',
       subtitle: 'India · Most played',
-      items,
+      items: data.items || [],
     };
   } catch (error) {
-    const data = await fetchSecondaryChart();
-    const entries = data.feed?.entry || [];
-    const items = entries.map((entry, index) => ({
-      title: entry['im:name']?.label || 'Song',
-      subtitle: `${entry['im:artist']?.label || 'Artist'} · Rank ${index + 1}`,
-      image: entry['im:image']?.[2]?.label || '',
-      rank: index + 1,
-      platform: 'Apple Music',
-      url: entry.link?.attributes?.href || 'https://music.apple.com',
-    }));
     return {
       title: 'Apple Music Charts',
-      subtitle: 'India · Top songs',
-      items,
+      subtitle: 'India · Fallback chart',
+      items: appleFallback,
     };
   }
 };
